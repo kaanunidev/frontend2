@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  color: #e0e6ed;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.btn-primary {
+  @apply px-4 py-2 rounded-lg bg-indigo-500 hover:bg-indigo-400 active:bg-indigo-600 transition text-white disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 active:bg-slate-800 transition text-white;
+}
+
+.input {
+  @apply w-full px-4 py-2 rounded-lg bg-slate-800/70 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-slate-400;
+}
+
+/* Flashcard 3D flip helpers */
+.flip-scene { perspective: 1000px; }
+.flip-card { position: relative; transform-style: preserve-3d; transition: transform 0.5s ease; }
+.flip-card.is-flipped { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; backface-visibility: hidden; display: grid; place-items: center; }
+.flip-back { transform: rotateY(180deg); }
+
+
